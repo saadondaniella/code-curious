@@ -12,6 +12,7 @@
 	import type { MatterInstance, Action } from '../lib/types';
 	import { actionSnapshot } from '$lib/utils/actions';
 	import { isRunning, matterInstanceStore, resetMatterFlag } from '$lib/stores/store';
+	import { theme } from '$lib/stores/theme';
 
 	// Matter.js instance, needs to be exported to be used by actions.ts
 	export let matterInstance: MatterInstance | null = null;
@@ -74,6 +75,10 @@
 
 	// Reinitialize Matter.js whenever the lesson `data` changes
 	$: if (data && matterContainer) {
+		reinitMatterJs();
+	}
+
+	$: if ($theme && matterContainer) {
 		reinitMatterJs();
 	}
 

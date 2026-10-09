@@ -4,6 +4,8 @@ import { colors } from './utils/colors';
 import { consoleOutput } from './utils/consoleActions';
 import type { Log } from './types';
 import { writable } from 'svelte/store';
+import { get } from 'svelte/store';
+import { theme } from './stores/theme';
 // Create aliases to avoid "Matter." prefixes
 const { Body, Constraint, Engine, Render, World, Bodies, Runner, Sleeping } = Matter;
 
@@ -48,7 +50,7 @@ export function initMatterJS(
 			width: s(options.width),
 			height: s(options.height),
 			wireframes: false,
-			background: 'rgb(18 19 26)', // Adjust background color
+			background: get(theme) === 'dark' ? 'rgb(18 19 26)' : 'rgb(248 250 252)',
 		},
 	});
 

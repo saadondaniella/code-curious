@@ -3,6 +3,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+html:not(.dark) .bg-primary-900 {
+	background-color: #ede9fe;
+}
+
 /* modern theme */
 @font-face {
 	font-family: 'Quicksand';
@@ -27,7 +31,7 @@
 
 .markdown li:before {
 	content: '\2022\00a0';
-	color: white;
+	color: currentColor;
 }
 
 .markdown li {
@@ -41,8 +45,14 @@
 }
 
 .markdown code {
-	background-color: #414141;
+	background-color: #e2e8f0;
+	color: #0f172a;
 	border-radius: 0.25rem;
 	padding: 0.15rem 0.3rem;
 	font-size: 0.9rem;
+}
+
+.dark .markdown code {
+	background-color: #414141;
+	color: inherit;
 }

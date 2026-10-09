@@ -249,7 +249,7 @@
 
 <!-- Panel 1: Lesson -->
 <section
-	class="bg-neutral-900 h-screen md:transition-all md:duration-250 md:ease-in-out flex flex-col {$currentPanel !==
+	class="bg-white text-slate-900 dark:bg-neutral-900 dark:text-slate-100 h-screen md:transition-all md:duration-250 md:ease-in-out flex flex-col {$currentPanel !==
 	1
 		? 'hidden'
 		: ''} {panel1Width} lg:block"
@@ -257,7 +257,7 @@
 	<div bind:this={scrollDiv} class="flex-1 overflow-y-scroll max-h-screen">
 		<!-- Panel header -->
 		<div
-			class="w-full flex items-center justify-between space-x-4 py-3 px-4 bg-[#3a1d2a] sticky top-0 z-10"
+			class="w-full flex items-center justify-between space-x-4 py-3 px-4 bg-slate-100 dark:bg-[#3a1d2a] sticky top-0 z-10"
 		>
 			<h2 class="flex items-center py-0 gap-4">
 				<FontAwesomeIcon icon={faChalkboardUser} /> Lesson
@@ -303,14 +303,14 @@
 
 <!-- Panel 2: Editor & Console -->
 <section
-	class="relative w-full bg-neutral-900 lg:border-x border-zinc-700 h-screen overflow-y-hidden md:transition-all md:duration-250 md:ease-in-out {$currentPanel !==
+	class="relative w-full bg-white text-slate-900 dark:bg-neutral-900 dark:text-slate-100 lg:border-x border-slate-200 dark:border-zinc-700 h-screen overflow-y-hidden md:transition-all md:duration-250 md:ease-in-out {$currentPanel !==
 	2
 		? 'hidden'
 		: ''} {panel2Width} lg:block"
 >
 	<!-- Editor -->
 	<div>
-		<div class="w-full flex items-center justify-between space-x-4 py-2 lg:py-3 px-4 bg-[#3a1d2a]">
+		<div class="w-full flex items-center justify-between space-x-4 py-2 lg:py-3 px-4 bg-slate-100 dark:bg-[#3a1d2a]">
 			<h2 class="flex gap-4 items-center"><FontAwesomeIcon icon={faCode} /> Editor</h2>
 
 			<!-- Run button, only show if currentPanel is 2, that is, not on desktop -->
@@ -342,7 +342,7 @@
 		<button
 			type="button"
 			on:click={toggleConsole}
-			class="w-40 rounded-t-2xl flex items-center justify-between space-x-4 py-3 px-4 bg-[#3a1d2a]"
+			class="w-40 rounded-t-2xl flex items-center justify-between space-x-4 py-3 px-4 bg-slate-100 dark:bg-[#3a1d2a]"
 		>
 			<h2 class="flex gap-4 items-center"><FontAwesomeIcon icon={faEye} /> Console</h2>
 			<div class="btn btn-sm p-0 flex gap-2">
@@ -354,7 +354,7 @@
 			</div>
 		</button>
 
-		<div class="bg-zinc-800 border-t-8 border-[#3a1d2a]">
+		<div class="bg-slate-200 dark:bg-zinc-800 border-t-8 border-slate-300 dark:border-[#3a1d2a]">
 			<Console expanded={consoleExpanded} />
 		</div>
 	</div>
@@ -362,11 +362,11 @@
 
 <!-- Panel 3: Playfield -->
 <section
-	class="bg-[#12131a] w-full h-screen lg:block {$currentPanel !== 3
+	class="bg-slate-100 text-slate-900 dark:bg-[#12131a] dark:text-slate-100 w-full h-screen lg:block {$currentPanel !== 3
 		? 'hidden lg:block'
 		: ''} {panel3Width} overflow-y-scroll"
 >
-	<div class="text-start w-full flex items-center justify-between space-x-4 py-2 px-4 bg-[#3a1d2a]">
+	<div class="text-start w-full flex items-center justify-between space-x-4 py-2 px-4 bg-slate-200 dark:bg-[#3a1d2a]">
 		<h2 class="flex items-center gap-4"><FontAwesomeIcon icon={faShapes} /> Playfield</h2>
 		<div class="flex gap-2">
 			<!-- STOP button, if running -->
